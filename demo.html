@@ -8,24 +8,45 @@
 
   <title>Demo - Framework 6Tools</title>
   <link rel="stylesheet" href="style.css">
+  <link rel='stylesheet' id='google-fonts-css'  href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' type='text/css' media='all' />
 
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
+
+    <!-- Header -->
     <div class="grid relative">
         <header class="grid--center grid clearfix">
-            <div class="searchform--compact hide-on-palm">
-                
-<form method="get" id="searchform" action="http://www.6tools.fr/">
-    <div class="inputs-group">
-        <input type="search" name="s" class="input-text" id="s" placeholder="Rechercher sur le site..." />
-        <span class="inputs-group__btn">
-            <button type="submit" class="input-submit btn" name="submit" id="searchsubmit"><span aria-hidden="true" class="icon-magnifying-glass icon--text"></span><span class="btn--text">Ok</span></button>
-        </span>
-    </div>
-</form>
+
+            <div class="grid__item one-fifth palm-one-half">
+                <a href="http://www.6tools.fr/" title="6-Tools" rel="home" class="logo "><img src="http://www.6tools.fr/wp-content/themes/6tools-basic/images/logo.png" class="img--full"></a>
             </div>
- <!-- Main Content -->
+
+            <div class="grid__item two-quarters">
+                <ul id="menu-main" class="nav nav--block nav--right">
+                    <li><a href="http://www.6tools.fr/">Accueil</a></li>
+                    <li class="has-dropdown"><a href="#">Présentation</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Présentation 1</a></li>
+                            <li><a href="#">Element de présentation plus long</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Réalisations</a></li>
+                    <li class="has-dropdown"><a href="http://www.6tools.fr/?sixcatalog_product_cat=categorie-1">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Element de menu</a></li>
+                            <li><a href="#">Element de menu un peu plus grand</a></li>
+                            <li><a href="#">Element de menu</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <!-- #header -->
+    
+     <!-- Main Content -->
         <div class="grid grid--center" >
             <div class="grid__item one-third">
                 <div class="teaser__item">
@@ -252,6 +273,18 @@
                     <div class="grid__item one-half">
                         <h2 class="subtitle icon-next icon--text">Extrait de contenu</h2>
                         <blockquote class="blockquote--excerpt"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p></blockquote>
+                        <h2 class="subtitle icon-next icon--text">Formulaire de recherche</h2>
+                         <div class="searchform--compact hide-on-palm">
+                
+<form method="get" id="searchform" action="http://www.6tools.fr/">
+    <div class="inputs-group">
+        <input type="search" name="s" class="input-text" id="s" placeholder="Rechercher sur le site..." />
+        <span class="inputs-group__btn">
+            <button type="submit" class="input-submit btn" name="submit" id="searchsubmit"><span aria-hidden="true" class="icon-magnifying-glass icon--text"></span><span class="btn--text">Ok</span></button>
+        </span>
+    </div>
+</form>
+            </div>
                     </div><!--
                     --><div class="grid__item one-half">
                         <h2 class="subtitle icon-next icon--text">Scroll interne</h2>
@@ -264,7 +297,61 @@
                 --><?php //get_sidebar(); ?>
         </div>
         
-  
+    <!-- #main-content -->
+        
+<!-- Footer -->
+<div class="footer--content">
+    <div class="inner-footer grid grid--center grid--table">
+        <div class="grid__item one-quarter">
+            <ul class="nav nav--stacked nav--stacked--center">
+                <li class="nav--title">Présentation</li>
+                <li><a href="#">Element court</a></li>
+                <li><a href="#">Element de menu vertical</a></li>
+                <li><a href="#">Element court</a></li>
+                <li><a href="#">Element long de menu</a></li>
+            </ul>
+        </div><!-- 
+        --><div class="grid__item one-quarter">
+            <ul class="nav nav--stacked nav--stacked--center">
+                <li class="nav--title">Services</li>
+                <li><a href="#">Element de menu vertical</a></li>
+                <li><a href="#">Element long de menu</a></li>
+                <li><a href="#">Element de menu classique</a></li>
+                <li><a href="#">Element court</a></li>
+            </ul>
+        </div><!-- 
+        --><div class="grid__item one-quarter">
+            <ul class="nav nav--stacked nav--stacked--center">
+                <li class="nav--title">Réalisations</li>
+                <li><a href="#">Element de menu vertical</a></li>
+                <li><a href="#">Element de menu classique</a></li>
+                <li><a href="#">Element court</a></li>
+                <li><a href="#">Element long de menu</a></li>
+            </ul>
+        </div><!-- 
+        --><div class="grid__item one-quarter">
+            <ul class="nav nav--stacked nav--stacked--center">
+                <li class="nav--title">Contact</li>
+                <li><a href="#">Element long de menu</a></li>
+                <li><a href="#">Element court</a></li>
+                <li><a href="#">Element de menu vertical</a></li>
+                <li><a href="#">Element de menu classique</a></li>
+                <li><a href="#">Element de menu classique</a></li>
+                <li><a href="#">Element de menu classique</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
 
+<footer class="footer--baseline">
+    <div class="inner-footer grid grid--center">
+        <div class="grid__item one-whole justify-blocks">
+            <p class="justify-blocks__item">2013 © 6TOOLS - Tous droits réservés - <a href="#">Mentions légales</a> - <a href="#">Plan du site</a> - <a href="#">Partenaires</a> - <a href="#">Contact</a></p>
+            <p class="justify-blocks__item">Réalisation : <a href="#">six design</a></p>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
 </body>
 </html>
