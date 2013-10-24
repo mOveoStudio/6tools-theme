@@ -1,0 +1,48 @@
+/*------------------------------------*\
+    $RESPONSIVE
+    @author: mOveo
+\*------------------------------------*/
+@mixin responsive-hidden ($namespace: "") {
+    /**
+    * Hide on #{$namespace}
+    */
+    .hide-on-#{$namespace}{
+        display:none;
+    }
+}
+
+@mixin responsive-display ($namespace: "") {
+    .only-on-#{$namespace}{
+        display:block;
+    }
+}
+
+@if $responsive == true{
+    [class*="only-on-"]{
+        display:none;
+    }
+
+    @include media-query(palm){
+        @include responsive-hidden("palm");
+        @include responsive-display("palm");
+    }
+
+    @include media-query(lap){
+        @include responsive-hidden("lap");
+        @include responsive-display("lap");
+    }
+
+    @include media-query(lap-and-up){
+        @include responsive-hidden("lap-and-up");
+        @include responsive-display("lap-and-up");
+    }
+
+    @include media-query(portable){
+        @include responsive-hidden("portable");
+    }
+
+    @include media-query(desk){
+        @include responsive-hidden("desk");
+        @include responsive-display("desk");
+    }
+}

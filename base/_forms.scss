@@ -1,0 +1,166 @@
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+/**
+ *
+ * Demo: jsfiddle.net/inuitcss/MhHHU
+ *
+ */
+fieldset{
+    padding:$base-spacing-unit;
+}
+
+
+/**
+ * Text inputs
+ *
+ * Instead of a `[type]` selector for each kind of form input, we just use a
+ * class to target any/every one, e.g.:
+   <input type=text class=text-input>
+   <input type=email class=text-input>
+   <input type=password class=text-input>
+ *
+ */
+
+.input-text,
+textarea{
+    /**
+     * Style these via your theme stylesheet.
+     */
+}
+
+
+/**
+ * Group sets of form fields in a list, e.g.:
+ *
+ */
+.form-fields{
+    list-style:none;
+    margin:0;
+}
+.form-fields > li{
+    @extend %sass-margin-bottom;
+}
+.form-fields > li:last-child{
+    margin-bottom:0;
+}
+
+
+/**
+ * Labels
+ *
+ * Define a `.label` class as well as a `label` element. This means we can apply
+ * label-like styling to meta-labels for groups of options where a `label`
+ * element is not suitable, e.g.: <input /> <label />
+ *
+ *
+ */
+label,
+.label{
+    display:block;
+}
+
+/**
+ * Extra help text in `label`s, e.g.:
+ *
+   <label>Card number <small class=additional>No spaces</small></label>
+ *
+ */
+.additional{
+    display:block;
+    font-weight:normal;
+}
+
+
+/*
+ * Groups of checkboxes and radios, e.g.:
+ *
+ */
+.check-list{
+    list-style:none;
+    margin:0;
+}
+
+
+/*
+ * Labels in check-lists
+ */
+.check-label,
+.check-list label,
+.check-list .label{
+    display:inline-block;
+}
+
+
+/**
+ * Spoken forms are for forms that read like spoken word, e.g.: <label for=spoken-name>name</label>
+ */
+.spoken-form label{
+    display:inline-block;
+    font:inherit;
+}
+
+
+/**
+ * Extra help text displayed after a field when that field is in focus, e.g.: <small class=extra-help>.edu emails only</small>
+ *
+ *
+ * We leave the help text in the document flow and merely set it to
+ * `visibility:hidden;`. This means that it won’t interfere with anything once
+ * it reappears.
+ *
+ */
+.extra-help{
+    display:inline-block;
+    visibility:hidden;
+}
+
+.input-text:active + .extra-help,
+.input-text:focus + .extra-help{
+    visibility:visible;
+}
+
+/**
+ * Custom Elements
+ * only if $ready-to-use is true
+ */
+
+@if $ready-to-use == true { 
+    .input-text, .input-textarea{
+      background-color: #fff;
+      border: 1px solid #ccc;
+      @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+      @include transition-property(border, box-shadow);
+      @include transition-duration(0.3s);
+      @include transition-timing-function(ease-in);
+      padding:5px 5px;
+      width:100%;
+      display:block;
+      margin-bottom:0.5rem;
+
+      // Focus state
+      &:focus {
+        border-color: #999999;
+        outline: 0;
+        outline: thin dotted \9; /* IE6-9 */
+        @include box-shadow(0 0 5px #999999);
+      }
+    }
+
+    .input-textarea{
+        height:auto;
+    }
+
+    .input-submit{
+        line-height:2;
+        padding:5px 10px;
+    }
+
+    button[disabled], 
+    textarea[disabled],
+    input[disabled]{
+        opacity:0.5;
+        cursor:default;
+        pointer-events: none;
+    }
+}

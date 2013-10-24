@@ -1,0 +1,163 @@
+@if $use-grids == true{
+
+/*------------------------------------*\
+    $GRIDS
+    @partial-author : mOveo
+\*------------------------------------*/
+/**
+ * Fluid and nestable grid system, e.g.:
+ *
+   <div class="grid">
+
+       <div class="grid__item  one-third">
+           <p>One third grid</p>
+       </div><!--
+
+    --><div class="grid__item  two-thirds">
+           <p>Two thirds grid</p>
+       </div><!--
+
+    --><div class="grid__item  one-half">
+           <p>One half grid</p>
+       </div><!--
+
+    --><div class="grid__item  one-quarter">
+           <p>One quarter grid</p>
+       </div><!--
+
+    --><div class="grid__item  one-quarter">
+           <p>One quarter grid</p>
+       </div>
+
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/CLYUC
+ *
+ */
+
+
+/**
+ * Grid wrapper
+ */
+.grid{
+    list-style:none;
+    margin-bottom:0;
+    min-width:$min-width;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.grid--center{
+    max-width:$max-width;
+    width:$global-width;
+    min-width:$min-width;
+}
+
+.grid--full{
+    max-width:100%;
+    min-width:100%;
+    width:100%;
+}
+
+
+
+/**
+ * Very infrequently occuring grid wrappers as children of grid wrappers.
+ */
+.grid .grid{
+    padding:0;
+    margin-left:-12px;
+    margin-right:-12px;
+    max-width:auto;
+    width:auto;
+    min-width:0;
+
+    &.grid--center{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    & > .grid__item{
+    }
+}
+
+
+/**
+ * Grid columns
+ */
+.grid__item{
+    display:inline-block;
+    width:100%;
+    padding:0 $base-spacing-unit/2;
+    vertical-align:top;
+    @if $global-border-box == false{
+        @include vendor(box-sizing, border-box);
+    }
+}
+
+/**
+ * Egal height width
+ */
+.grid--table{
+    display:table;
+    .grid__item{
+        display:table-cell;
+    }
+}
+
+@if $responsive == true{
+
+@include media-query(palm){
+
+   // Grid set 100% by default
+   .grid--center, .grid{
+        width:auto;
+        min-width:0;
+        max-width:auto;
+    }
+
+    .grid__item{
+        width:100%;
+    }
+
+    .grid--table,
+    .grid--table .grid__item{
+        display:block;
+        width:100%;
+    }
+}
+
+@include media-query(lap){
+    
+}
+
+@include media-query(lap-and-up){
+   
+}
+
+@include media-query(portable){
+    
+}
+
+@include media-query(desk){
+    
+}
+
+
+/**
+ * If you have set the additional `$responsive-extra` variable to ‘true’ in
+ * `_vars.scss` then you now have access to the following class available to
+ * accomodate much larger screen resolutions.
+ */
+
+@if $responsive-extra == true{
+
+@include media-query(desk-wide){
+    @include grid-setup("desk-wide-");
+}
+
+}
+
+} /* endif */
+
+}//endif

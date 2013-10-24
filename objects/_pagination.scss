@@ -1,0 +1,62 @@
+@if $use-pagination == true{
+
+/*------------------------------------*\
+    $PAGINATION
+\*------------------------------------*/
+/**
+ * Basic pagination object, extends `.nav`.
+ * Requires some funky commenting to collapse any white-space caused by the
+ * `display:inline-block;` rules.
+ *
+ * Demo: jsfiddle.net/inuitcss/9Y6PU
+ *
+ */
+
+.pagination{
+    text-align:center;
+    /**
+     * Remove whitespace caused by `inline-block`.
+     */
+    letter-spacing:-0.31em;
+    word-spacing:-0.43em;
+}
+    .pagination > li{
+        padding:$base-spacing-unit / 2;
+        letter-spacing:normal;
+        word-spacing:normal;
+    }
+    .pagination > li {
+        & > a{
+            padding:$base-spacing-unit / 2;
+            margin:-$base-spacing-unit / 2;
+        }
+
+        &.current > a:hover{
+            cursor:default;
+        }
+        
+    }
+    .pagination__first a:before{
+        content:"\00AB" "\00A0";
+    }
+    .pagination__last a:after{
+        content:"\00A0" "\00BB";
+    }
+
+
+@if $responsive == true{
+    @include media-query(palm){
+
+        // Intelligent reponsive
+        // Display only prev, current and next link
+        .pagination--reponsive > li{
+            display: none;
+            &.current, 
+            &.prev, 
+            &.next{
+                display:inline-block;
+            }
+        }
+    }
+}
+}//endif

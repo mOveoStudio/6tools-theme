@@ -1,0 +1,11 @@
+/*------------------------------------*\
+    $IMAGES
+    @author: mOveo
+\*------------------------------------*/
+a{
+    color:$link-color;
+}
+
+article a{
+    @include decoration-on-hover();
+}

@@ -1,0 +1,42 @@
+/*------------------------------------*\
+    $ALERTS
+    @author : mOveo
+\*------------------------------------*/
+/**
+ * Wrap the content with color background
+ */
+
+$default-alert-color    :   #E2E2E2!default;
+$success-color          :   #DFF0D8!default;
+$info-color             :   #dfd2b2!default;
+$error-color            :   #F2DEDE!default;
+
+
+@mixin alert-style($current-color){
+    background-color:$current-color;
+    color:darken($current-color,40%);
+    border-color:darken($current-color,20%);
+}
+
+@if $use-alerts == true{
+
+.alert{
+    background: none repeat scroll 0 0 $default-alert-color;
+    border: 1px solid darken($default-alert-color,20%);
+    color: darken($default-alert-color,20%);
+    padding: 5px 18px;
+}
+
+.alert__info{
+    @include alert-style($info-color);
+}
+
+.alert__error{
+    @include alert-style($error-color);
+}
+
+.alert__success{
+   @include alert-style($success-color);
+}
+
+}

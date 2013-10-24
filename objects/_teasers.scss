@@ -1,0 +1,24 @@
+/*------------------------------------*\
+    $TEASERS
+    @author : mOveo
+\*------------------------------------*/
+
+@if $use-teasers == true {
+    @if $ready-to-use == true {
+
+        .teasers{
+            
+        }
+
+
+        .teaser__item{
+            padding:10px;
+            margin-bottom:2rem;
+            background-color:#f6f6f6;
+        }
+
+        .teaser__img{
+            
+        }
+    }
+}

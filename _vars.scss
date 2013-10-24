@@ -1,0 +1,101 @@
+/*------------------------------------*\
+    VARS.SCSS
+\*------------------------------------*/
+
+/*------------------------------------*\
+    $OVERRIDES
+\*------------------------------------*/
+/**
+ * Place any variables that should override inuit.css’ defaults here.
+ */
+
+$use-grids:         true;
+$use-flexbox:       true;
+$use-columns:       true;
+$use-nav:           true;
+$use-options:       true;
+$use-pagination:    true;
+$use-breadcrumb:    true;
+$use-media:         true;
+$use-marginalia:    true;
+$use-island:        true;
+$use-block-list:    true;
+$use-matrix:        true;
+$use-split:         true;
+$use-greybox:       true;
+$use-beautons:      true;
+$use-alerts:        true;
+$use-inputs-group:  true;
+$use-teasers:       true;
+$use-banner:        true;
+$use-scrollable:    true;
+$use-justify-blocks:true;
+
+
+
+/*------------------------------------*\
+    $BREAK-POINT
+\*------------------------------------*/
+$lap-start:         481px!default;
+$desk-start:        980px!default;
+$desk-wide-start:   1200px!default;
+
+
+
+/*------------------------------------*\
+    $CUSTOM
+\*------------------------------------*/
+/**
+ * Place any of your own variables that sit on top of inuit.css here.
+ */
+
+$em-base:                   16 !default;
+$experimental:              true !default;
+$breadcrumb-separator:      "\002F"!default;
+$primary-color:             #333 !default;
+$secondary-color:           #666 !default;
+
+$max-width:                 960px!default;
+$min-width:                 960px!default;
+$global-width:              960px!default;
+
+$ready-to-use:      true;
+
+/**
+ * CUSTOM PARAMETERS
+ */
+
+// PARAMETRES GLOBAUX
+$primary-color:     #666;
+$secondary-color:   #ff6600;
+$base-font-size:    16px;
+$base-font-family:  'Source Sans Pro', Arial, sans-serif;;
+$bg-color:          #fff;
+
+// TAILLE SITE
+$responsive:        true;
+$max-width:         1200px;
+$min-width:         960px;
+$global-width:      100%;
+
+// NAVIGATION
+$nav-background-color:          transparent;
+$nav-link-color:                $primary-color;
+$nav-link-color-hover:          $secondary-color;
+$nav-dropdown-background-color: #f6f6f6;
+$nav-dropdown-link-color:       $primary-color;
+$nav-dropdown-link-color-hover: $secondary-color;
+$nav-border:                    none;
+$breadcrumb-separator:          ">";
+
+// ALERTES
+$success-color:     #6ac349;
+$info-color:        #2ab9dd;
+$error-color:       #f26d7d;
+
+$english-quotes:    false;
+
+
+$text-color:        $primary-color;
+$link-color:        $secondary-color;
+$nav-link-color:    $primary-color;

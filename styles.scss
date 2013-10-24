@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/*!
+Theme Name: 6Demo basic pour 6Tools
+Theme URI: www.6-design.com
+Author: mOveo
+Author URI: http://www.mOveo.fr
+Version: 0.2
+Text Domain: sixtools
+*/
+
+/*------------------------------------*\
+    STYLE.CSS
+\*------------------------------------*/
+/**
+ *
+ * sass --watch style.scss:style.min.css --style compressed
+ *
+ * Here we pull in some variables, include the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
+
+/**
+ * COMPASS IMPORTS
+ */
+
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "compass/css3/text-shadow";
+@import "compass/css3/background-size";
+@import "compass/css3/box-sizing";
+
+/**
+ * Setup framework
+ */
+@import "vars";
+@import "inuit";
+
+
+
+/**
+ * Owned styles
+ */
+@import "theme/icons";
+@import "theme/global";
+

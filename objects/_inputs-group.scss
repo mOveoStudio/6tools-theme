@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    $INPUTS GROUP
+    @author : mOveo
+\*------------------------------------*/
+@if $use-inputs-group == true {
+.inputs-group {
+    display:table;
+    border-collapse: separate;
+
+    .input-text{
+        width:100%;
+        display:table-cell;
+        margin-bottom:0;
+        line-height:2;
+
+        &[type="search"]{
+            @include box-sizing(border-box);
+        }
+    }
+
+    
+}
+.inputs-group__btn,
+.inputs-group__element {
+    width:1%;
+    display:table-cell;
+    white-space: nowrap;
+    vertical-align: middle; // Match the inputs
+}
+
+.inputs-group__element{
+    background:#222;
+    color:#fff;
+    padding:0 15px;
+}
+
+.inputs-group__btn > .btn {
+  @include border-radius(0);
+  position: relative;
+  line-height:2;
+  padding:0 15px;
+  
+  &:hover,
+  &:active {
+    z-index: 2;
+  }
+}
+
+
+
+}

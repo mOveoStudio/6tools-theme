@@ -1,0 +1,316 @@
+@if $use-nav == true or $use-options == true or $use-pagination == true or $use-breadcrumb == true{
+
+/*------------------------------------*\
+    $NAV
+    @partial-author : mOveo
+\*------------------------------------*/
+/**
+ * Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+ * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ * e.g.:
+ *
+   <ul class=nav>
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Demo: jsfiddle.net/inuitcss/Vnph4
+ *
+ */
+.nav{
+    list-style:none;
+    margin-left:0;
+    @extend .cf;
+
+    > li{
+
+        &,
+        > a{
+            display:inline-block;
+           *display:inline;
+            zoom:1;
+        }
+    }
+}
+
+
+/**
+ * `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
+ *
+   <ul class="nav  nav--stacked">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--stacked{
+
+    > li{
+        display:list-item;
+
+        > a{
+            display:block;
+        }
+    }
+}
+
+
+/**
+ * Stacked navigation but with center elements
+ */
+.nav--stacked--center{
+    > li {
+        text-align:center;
+    }
+    > li a{
+        display:inline-block;
+    }
+}
+/**
+ * `.nav--banner` extends `.nav` and centres the list, e.g.:
+ *
+   <ul class="nav  nav--banner">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--banner{
+    text-align:center;
+}
+
+
+/**
+ * Give nav links a big, blocky hit area. Extends `.nav`, e.g.:
+ *
+   <ul class="nav  nav--block">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--block{
+    line-height:1;
+    /**
+     * Remove whitespace caused by `inline-block`.
+     */
+    letter-spacing:-0.31em;
+    word-spacing:-0.43em;
+    white-space:nowrap;
+
+    > li{
+        letter-spacing:normal;
+        word-spacing:normal;
+
+        > a{
+            padding:$half-spacing-unit;
+            display:block;
+        }
+    }
+}
+
+
+/**
+ * Force a nav to occupy 100% of the available width of its parent. Extends
+ * `.nav`, e.g.:
+ *
+   <ul class="nav  nav--fit">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Thanks to @pimpl for this idea!
+ */
+.nav--fit{
+    display:table;
+    width:100%;
+
+    > li{
+        display:table-cell;
+
+        > a{
+            display:block;
+        }
+    }
+}
+
+
+/**
+ * Make a list of keywords. Extends `.nav`, e.g.:
+ *
+   `<ul class="nav  nav--keywords>`
+ *
+ */
+.nav--keywords{
+
+    > li{
+
+        &:after{
+            content:"\002C" "\00A0";
+        }
+
+        &:last-child:after{
+            display:none;
+        }
+    }
+}
+
+/**
+ * Dropdown menu
+ * Warning : don't work with nav--fit
+ */
+
+.dropdown {
+    position: absolute;
+    display:none;
+    z-index: 99;
+    list-style:none;
+    margin-left:0;
+    left:0;
+
+    li {
+      width: 100%;
+      height: auto;
+
+      a {
+        font-weight: normal;
+        padding: 8px 19px;
+        display:block;
+        text-align:left;
+      }
+
+    }
+
+}
+
+.dropdown--right .dropdown{
+    left:auto;
+    right:0;
+}
+
+.has-dropdown {
+    position:relative;
+
+    &:hover {
+        & > .dropdown {
+            display:block;
+        }
+
+        
+    }
+}
+
+
+
+/**
+ * Custom Elements
+ * only if $ready-to-use is true
+ */
+
+$nav-background-color: #fff!default;
+$nav-link-color: #222!default;
+$nav-link-color-hover: #ddd!default;
+$nav-dropdown-background-color: transparent!default;
+$nav-dropdown-link-color: #666!default;
+$nav-dropdown-link-color-hover: #ddd!default;
+$nav-border: 1px solid #666!default;
+
+@if $ready-to-use == true {
+
+    .nav{
+        margin-bottom:0;
+        background-color:$nav-background-color;
+    }
+    
+    .nav--block > li, .nav--fit > li  {
+
+        & > a {
+            background-color:$nav-background-color;
+            color:$nav-link-color;
+            border-left: $nav-border;
+            padding:12px;
+            text-decoration:none;
+        }
+
+        &:hover > a,
+        &:focus > a{
+
+            color:$nav-link-color-hover;
+        }
+        
+        &:first-child a{
+            border-left-width:0;
+        }
+    }
+    
+    .nav--center{
+        text-align:center;
+        & > li > a {
+            text-align:center;
+        }
+    }
+
+    .nav--right{
+        text-align:right;
+        & > li > a {
+            text-align:center;
+        }
+    }
+
+
+    .dropdown {
+        & > li {
+
+            & > a {
+
+                background:$nav-dropdown-background-color;
+                color:$nav-dropdown-link-color;
+                text-decoration:none;
+
+                &:hover,
+                &:focus,
+                {
+                    color:$nav-dropdown-link-color-hover;
+                }
+            }
+
+        }
+    }
+}
+
+
+/**
+ * Responsive rules
+ */
+@if $responsive == true{
+    @include media-query(palm){
+        .nav {
+
+            & > li {
+                display:block;
+            }
+            
+            & > li > a {
+                border:none;
+            }
+        }
+        
+        .dropdown {
+            position:static;
+        }
+            
+    }
+}
+
+
+}//endif

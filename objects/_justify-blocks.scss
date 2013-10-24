@@ -1,0 +1,25 @@
+@if $use-justify-blocks == true{
+
+/*------------------------------------*\
+    $JUSTIFY BLOCKS
+    @author : mOveo
+\*------------------------------------*/
+// Thanks to : http://code.jelmerdemaat.nl/2012/perfectly-justified-css-grid-technique-using-inline-block/
+
+.justify-blocks {
+    display:block;
+    text-align:justify;
+
+    &::after{
+        content:'';
+        display:inline-block;
+        width:100%;
+    }
+}
+
+.justify-blocks__item{
+    display:inline-block;
+}
+
+
+}
